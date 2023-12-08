@@ -38,5 +38,6 @@ test {
 sonar {
   properties {
     property "sonar.projectKey", "project-devops"
+	property "sonar.host.url","http://34.93.135.68:9000"
   }
 }
