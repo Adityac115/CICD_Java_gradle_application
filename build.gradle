@@ -26,7 +26,7 @@ test {
 }
 
 
-sonarqube {
+sonar {
     properties {
         property 'sonar.host.url', 'http://34.100.221.74:9000'
         property 'sonar.login', 'aditya'
