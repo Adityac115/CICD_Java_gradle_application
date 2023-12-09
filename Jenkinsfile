@@ -46,8 +46,8 @@ pipeline{
                 script{
 
                     dir('kubernetes/') {
-            
-                         sh 'helm datree test myapp/ --policy-config policies.yaml'
+                        sh 'exit'
+                        sh 'helm datree test myapp/ --policy-config policies.yaml'
                         }
                     }
                 }
