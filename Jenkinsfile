@@ -46,7 +46,7 @@ pipeline{
                 script{
 
                     dir('kubernetes/') {
-                        sh 'datree config offline local'
+                        sh './datree config offline local'
                         sh './datree test myapp/'
                         // sh 'helm datree test myapp/ --policy-config policies.yaml'
                         }
