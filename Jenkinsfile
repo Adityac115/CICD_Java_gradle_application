@@ -52,7 +52,6 @@ pipeline{
                     }
                 }
             }
-        }
         stage("pushing the helm charts to nexus"){
             steps{
                 script{
@@ -68,6 +67,7 @@ pipeline{
                 }
             }
         }
+    }
     //     stage('manual approval'){
     //         steps{
     //             script{
