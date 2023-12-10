@@ -83,7 +83,7 @@ pipeline{
                script{
 
                 sshagent (credentials: ['ssh_key']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@34.93.169.141 kubectl create secret docker-registry registry-secret --docker-server=34.100.149.81:8083 --docker-username=admin --docker-password=admin --docker-email=adityakushwahaiffco@gmail.com'
+                    sh 'ssh -o StrictHostKeyChecking=no root@34.93.169.141 cat /etc/docker/daemon.json'
                 //    withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
                       
                         // dir('kubernetes/') {
