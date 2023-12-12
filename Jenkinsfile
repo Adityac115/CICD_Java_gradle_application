@@ -48,7 +48,9 @@ pipeline{
                     dir('kubernetes/') {
                         // sh './datree config set offline local'
                         // sh 'helm datree test myapp/ --policy-config policies.yaml'
-                        sh 'ls -ltr'
+                        sh 'chmod +x datree'
+                        sh 'helm plugin install https://github.com/datreeio/helm-datree'
+                        sh './datree config set offline local'
                         }
                     }
                 }
