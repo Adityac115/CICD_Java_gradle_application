@@ -80,22 +80,22 @@ pipeline{
         //         }
         //     }
         // }
-    //     stage('Deploying application on k8s cluster') {
-    //         steps {
-    //            script{
+        stage('Deploying application on k8s cluster') {
+            steps {
+               script{
 
-    //             sshagent (credentials: ['ssh_key']) {
-    //                 sh 'ssh -o StrictHostKeyChecking=no root@34.93.169.141 helm upgrade --install --set image.repository="34.100.149.81:8083/springapp" --set image.tag="15" myjavaapp /home/bhumik20/CICD_Java_gradle_application/kubernetes/myapp/'
-    //                withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
+                sshagent (credentials: ['ssh_key']) {
+                    sh 'ssh -o StrictHostKeyChecking=no root@35.200.148.143 helm upgrade --install --set image.repository="34.100.130.110:8083/springapp" --set image.tag="${VERSION}" myjavaapp /home/bhumik20/CICD_Java_gradle_application/kubernetes/myapp/'
+                   withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
                       
-    //                     dir('kubernetes/') {
-    //                       sh 'helm upgrade --install --set image.repository="34.125.214.226:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ ' 
-    //                     }
-    //                 }
-    //            }
-    //         }
-    //     }
-    // }
+                        dir('kubernetes/') {
+                          sh 'helm upgrade --install --set image.repository="34.100.130.110:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ ' 
+                        }
+                    }
+               }
+            }
+        }
+    }
     //     stage('verifying app deployment'){
     //         steps{
     //             script{
