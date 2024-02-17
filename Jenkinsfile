@@ -41,19 +41,19 @@ pipeline{
                 }
             }
         }
-        // stage('indentifying misconfigs using datree in helm charts'){
-        //     steps{
-        //         script{
+        stage('indentifying misconfigs using datree in helm charts'){
+            steps{
+                script{
 
-        //             dir('kubernetes/') {
-        //                 sh './datree config set offline local'
-        //                 sh 'helm datree test myapp/ --policy-config policies.yaml'
-        //                 sh 'helm plugin install https://github.com/datreeio/helm-datree'
+                    dir('kubernetes/') {
+                        // sh './datree config set offline local'
+                        sh 'helm datree test myapp/ --policy-config policies.yaml'
+                        // sh 'helm plugin install https://github.com/datreeio/helm-datree'
                         
-        //                 }
-        //             }
-        //         }
-        //     }
+                        }
+                    }
+                }
+            }
         // stage("pushing the helm charts to nexus"){
         //     steps{
         //         script{
